@@ -1,0 +1,66 @@
+{
+    "@odata.etag": "\"0x8DD7FF9CF4633D0\"",
+    "name": "resume-skill",
+    "description": "",
+    "skills": [
+      {
+        "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+        "name": "key-phrase-skill",
+        "description": "",
+        "context": "/document",
+        "defaultLanguageCode": "en",
+        "maxKeyPhraseCount": 123,
+        "modelVersion": "",
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content",
+            "inputs": []
+          }
+        ],
+        "outputs": [
+          {
+            "name": "keyPhrases",
+            "targetName": "keyPhrases"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.V3.EntityRecognitionSkill",
+        "name": "entity-skill",
+        "description": "",
+        "context": "/document",
+        "categories": [
+          "Organization",
+          "Location",
+          "Person"
+        ],
+        "defaultLanguageCode": "en",
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content",
+            "inputs": []
+          }
+        ],
+        "outputs": [
+          {
+            "name": "persons",
+            "targetName": "people"
+          },
+          {
+            "name": "locations",
+            "targetName": "locations"
+          },
+          {
+            "name": "organizations",
+            "targetName": "organizations"
+          }
+        ]
+      }
+    ],
+    "cognitiveServices": {
+      "@odata.type": "#Microsoft.Azure.Search.AIServicesByKey",
+      "subdomainUrl": "https://ai900searchcognitive.cognitiveservices.azure.com/"
+    }
+  }

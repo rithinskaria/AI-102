@@ -1,0 +1,117 @@
+{
+    "@odata.etag": "\"0x8DD7FF828A667CC\"",
+    "name": "resume-index",
+    "fields": [
+      {
+        "name": "id",
+        "type": "Edm.String",
+        "searchable": false,
+        "filterable": false,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": true,
+        "synonymMaps": []
+      },
+      {
+        "name": "metadata_storage_name",
+        "type": "Edm.String",
+        "searchable": false,
+        "filterable": true,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": false,
+        "synonymMaps": []
+      },
+      {
+        "name": "metadata_storage_path",
+        "type": "Edm.String",
+        "searchable": false,
+        "filterable": false,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": false,
+        "synonymMaps": []
+      },
+      {
+        "name": "content",
+        "type": "Edm.String",
+        "searchable": true,
+        "filterable": false,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": false,
+        "analyzer": "standard.lucene",
+        "synonymMaps": []
+      },
+      {
+        "name": "keyPhrases",
+        "type": "Collection(Edm.String)",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": true,
+        "key": false,
+        "analyzer": "standard.lucene",
+        "synonymMaps": []
+      },
+      {
+        "name": "people",
+        "type": "Collection(Edm.String)",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": true,
+        "key": false,
+        "analyzer": "standard.lucene",
+        "synonymMaps": []
+      },
+      {
+        "name": "locations",
+        "type": "Collection(Edm.String)",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": true,
+        "key": false,
+        "analyzer": "standard.lucene",
+        "synonymMaps": []
+      },
+      {
+        "name": "organizations",
+        "type": "Collection(Edm.String)",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": true,
+        "key": false,
+        "analyzer": "standard.lucene",
+        "synonymMaps": []
+      }
+    ],
+    "scoringProfiles": [],
+    "suggesters": [],
+    "analyzers": [],
+    "normalizers": [],
+    "tokenizers": [],
+    "tokenFilters": [],
+    "charFilters": [],
+    "similarity": {
+      "@odata.type": "#Microsoft.Azure.Search.BM25Similarity"
+    }
+  }

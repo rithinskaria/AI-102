@@ -1,0 +1,133 @@
+[
+  {
+    "text": "I want to order a large pepperoni pizza",
+    "intent": "OrderPizza",
+    "entities": [
+      {
+        "category": "size",
+        "offset": 18,
+        "length": 5
+      },
+      {
+        "category": "type",
+        "offset": 24,
+        "length": 9
+      }
+    ]
+  },
+  {
+    "text": "Can I get a medium veggie pizza to 123 Main St?",
+    "intent": "OrderPizza",
+    "entities": [
+      {
+        "category": "size",
+        "offset": 12,
+        "length": 6
+      },
+      {
+        "category": "type",
+        "offset": 19,
+        "length": 6
+      },
+      {
+        "category": "address",
+        "offset": 35,
+        "length": 11
+      }
+    ]
+  },
+  {
+    "text": "I'd like to order two small cheese pizzas",
+    "intent": "OrderPizza",
+    "entities": [
+      {
+        "category": "quantity",
+        "offset": 18,
+        "length": 3
+      },
+      {
+        "category": "size",
+        "offset": 22,
+        "length": 5
+      },
+      {
+        "category": "type",
+        "offset": 28,
+        "length": 6
+      }
+    ]
+  },
+  {
+    "text": "Cancel my last order",
+    "intent": "CancelOrder",
+    "entities": []
+  },
+  {
+    "text": "What's the status of my pizza delivery?",
+    "intent": "CheckStatus",
+    "entities": []
+  },
+  {
+    "text": "I would like a large cheese pizza delivered to 45 Elm Street",
+    "intent": "OrderPizza",
+    "entities": [
+      {
+        "category": "size",
+        "offset": 15,
+        "length": 5
+      },
+      {
+        "category": "type",
+        "offset": 21,
+        "length": 6
+      },
+      {
+        "category": "address",
+        "offset": 47,
+        "length": 13
+      }
+    ]
+  },
+  {
+    "text": "Please cancel the order I placed yesterday",
+    "intent": "CancelOrder",
+    "entities": []
+  },
+  {
+    "text": "Where is my pizza?",
+    "intent": "CheckStatus",
+    "entities": []
+  },
+  {
+    "text": "I'd like to order a small veggie pizza for pickup",
+    "intent": "OrderPizza",
+    "entities": [
+      {
+        "category": "size",
+        "offset": 20,
+        "length": 5
+      },
+      {
+        "category": "type",
+        "offset": 26,
+        "length": 6
+      }
+    ]
+  },
+  {
+    "text": "Can you deliver a pepperoni pizza to 88 Baker St?",
+    "intent": "OrderPizza",
+    "entities": [
+      {
+        "category": "type",
+        "offset": 18,
+        "length": 9
+      },
+      {
+        "category": "address",
+        "offset": 37,
+        "length": 11
+      }
+    ]
+  }
+]

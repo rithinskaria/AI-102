@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure OpenAI Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #chatbox { border: 1px solid #ccc; padding: 10px; width: 500px; height: 300px; overflow-y: auto; margin-bottom: 10px; }
+        input[type="text"] { width: 400px; padding: 8px; }
+        button { padding: 8px 12px; }
+    </style>
+</head>
+<body>
+    <h2>Simple Azure Chatbot</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="message" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        async function sendMessage() {
+            const message = document.getElementById("message").value;
+            if (!message.trim()) return;
+
+            const chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message })
+            });
+
+            const data = await response.json();
+            chatbox.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
+            document.getElementById("message").value = "";
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+    "@odata.etag": "\"0x8DD80E0A34FA115\"",
+    "name": "demo-index",
+    "fields": [
+      {
+        "name": "id",
+        "type": "Edm.String",
+        "searchable": false,
+        "filterable": false,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": true,
+        "synonymMaps": []
+      },
+      {
+        "name": "employeeIds",
+        "type": "Collection(Edm.String)",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": true,
+        "key": false,
+        "analyzer": "standard.lucene",
+        "synonymMaps": []
+      }
+    ],
+    "scoringProfiles": [],
+    "suggesters": [],
+    "analyzers": [],
+    "normalizers": [],
+    "tokenizers": [],
+    "tokenFilters": [],
+    "charFilters": [],
+    "similarity": {
+      "@odata.type": "#Microsoft.Azure.Search.BM25Similarity"
+    }
+  }

@@ -1,0 +1,31 @@
+{
+    "@odata.etag": "\"0x8DD80DF8D216D06\"",
+    "name": "employeeskillset",
+    "description": "",
+    "skills": [
+      {
+        "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+        "name": "customskillset",
+        "description": "",
+        "context": "/document",
+        "uri": "https://fn-srch-fs-02.azurewebsites.net/api/SearchTriggerHttp?code=XeLO1NdZxFUpp2v9rrgTgoQBFQLNhXrQNpXIJtdwN-yCAzFueld43A==",
+        "httpMethod": "POST",
+        "timeout": "PT30S",
+        "batchSize": 1000,
+        "inputs": [
+          {
+            "name": "content",
+            "source": "/document/content",
+            "inputs": []
+          }
+        ],
+        "outputs": [
+          {
+            "name": "employeeIds",
+            "targetName": "employeeIds"
+          }
+        ],
+        "httpHeaders": {}
+      }
+    ]
+  }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure AI Language Services Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; max-width: 900px; margin: auto; }
+        textarea { width: 100%; padding: 10px; }
+        h2 { margin-top: 40px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Azure AI Language Services Demo</h1>
+    <form method="post">
+        <textarea name="text_input" rows="8" placeholder="Enter your text here..."></textarea><br><br>
+        <button type="submit">Run Analysis</button>
+    </form>
+
+    {% if result %}
+        <h2>Results</h2>
+
+        {% if result.language %}
+            <p><strong>Language:</strong> {{ result.language.name }} (ISO: {{ result.language.iso6391_name }}, Confidence: {{ result.language.confidence_score | round(2) }})</p>
+        {% endif %}
+
+        {% if result.sentiment %}
+            <p><strong>Sentiment:</strong> {{ result.sentiment.sentiment }}</p>
+            <ul>
+                <li>Positive: {{ result.sentiment.confidence.positive | round(2) }}</li>
+                <li>Neutral: {{ result.sentiment.confidence.neutral | round(2) }}</li>
+                <li>Negative: {{ result.sentiment.confidence.negative | round(2) }}</li>
+            </ul>
+        {% endif %}
+
+        {% if result.key_phrases %}
+            <p><strong>Key Phrases:</strong> {{ result.key_phrases | join(', ') }}</p>
+        {% endif %}
+
+        {% if result.ner %}
+            <p><strong>Named Entities:</strong></p>
+            <ul>
+                {% for ent in result.ner %}
+                    <li>{{ ent.text }} ({{ ent.category }}, Confidence: {{ ent.confidence_score | round(2) }})</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if result.linked_entities %}
+            <p><strong>Linked Entities:</strong></p>
+            <ul>
+                {% for ent in result.linked_entities %}
+                    <li><a href="{{ ent.url }}" target="_blank">{{ ent.name }}</a> ({{ ent.data_source }})</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if result.pii %}
+            <p><strong>PII Entities:</strong></p>
+            <ul>
+                {% for ent in result.pii %}
+                    <li>{{ ent.text }} ({{ ent.category }}, Confidence: {{ ent.confidence_score | round(2) }})</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p><strong>PII:</strong> No PII detected.</p>
+        {% endif %}
+
+        {% if result.summary %}
+            <p><strong>Summary:</strong></p>
+            <ul>
+                {% for s in result.summary %}
+                    <li>{{ s.text }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if result.error %}
+            <p style="color: red;"><strong>Error:</strong> {{ result.error }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

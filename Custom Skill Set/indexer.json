@@ -1,0 +1,22 @@
+{
+    "@odata.context": "https://srch-resume-eus-98765.search.windows.net/$metadata#indexers/$entity",
+    "@odata.etag": "\"0x8DD80E1697A2AA6\"",
+    "name": "indexer-1745245658922",
+    "description": null,
+    "dataSourceName": "azureblob-1745243920373-datasource",
+    "skillsetName": "employeeskillset",
+    "targetIndexName": "demo-index",
+    "disabled": null,
+    "schedule": null,
+    "parameters": null,
+    "fieldMappings": [],
+    "outputFieldMappings": [
+      {
+        "sourceFieldName": "/document/employeeIds",
+        "targetFieldName": "employeeIds",
+        "mappingFunction": null
+      }
+    ],
+    "cache": null,
+    "encryptionKey": null
+  }

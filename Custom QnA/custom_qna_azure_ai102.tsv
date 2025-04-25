@@ -1,0 +1,11 @@
+id	questions	answer	source	metadata
+1	What is Azure Cognitive Services?	Azure Cognitive Services is a set of cloud-based APIs that allow developers to integrate AI capabilities into their applications without needing deep AI or data science knowledge.	AzureAI102	
+2	How can I analyze text using Azure?	You can use Azure AI Language service to analyze sentiment, extract key phrases, detect language, and identify named entities in text.	AzureAI102	
+3	What is the use of Azure Form Recognizer?	Azure Form Recognizer extracts text, key-value pairs, and tables from documents using prebuilt and custom models, enabling automation of data extraction from forms and invoices.	AzureAI102	
+4	Can I use Azure to build a chatbot?	Yes, you can use Azure Bot Service and integrate it with Azure Cognitive Services like Language Understanding (LUIS) to build intelligent chatbots.	AzureAI102	
+5	What is the purpose of LUIS in Azure?	Language Understanding (LUIS) is used to interpret user input and extract intent and entities to enable natural language interaction in applications.	AzureAI102	
+6	How does Azure Computer Vision work?	Azure Computer Vision uses AI models to analyze visual content in images and videos, identifying objects, reading text (OCR), and generating image descriptions.	AzureAI102	
+7	What is Custom Vision in Azure?	Custom Vision allows you to build, deploy, and improve your own image classification or object detection models using your own labeled data.	AzureAI102	
+8	How does Azure Speech service help developers?	Azure Speech service offers capabilities such as speech-to-text, text-to-speech, speech translation, and speaker recognition to build voice-enabled applications.	AzureAI102	
+9	Can I use Azure to summarize documents?	Yes, you can use the Text Analytics feature in Azure AI Language to perform abstractive or extractive summarization of documents.	AzureAI102	
+10	What is QnA Maker in Azure?	QnA Maker was a cloud-based API service that created a conversational layer over your data, but it has now been integrated into Azure AI Language under custom question answering.	AzureAI102	
